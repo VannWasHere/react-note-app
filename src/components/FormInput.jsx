@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const FormInput = () => {
     return (
         <div className="w-full p-5 border rounded-lg">
@@ -15,6 +17,8 @@ const FormInput = () => {
                 rows={8}
                 className="bg-yellow-200 p-2 rounded-xl resize-none"
                 placeholder="Note Title"/>  
+
+                <Button text={"Submit Form"}/>
             </form>
         </div>
     );
