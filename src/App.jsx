@@ -1,8 +1,8 @@
-import FirstComponent from "./components/FirstComponent"
+import NoteApp from "./components/NoteApp"
 function App() {
   return (
     <>
-      <FirstComponent />
+      <NoteApp />
     </>
   )
 }
