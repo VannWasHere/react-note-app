@@ -13,13 +13,13 @@ const FormInput = () => {
     }
 
     return (
-        <div className="w-full p-5 border rounded-lg">
-            <h1 className="text-3xl font-bold">Input Notes</h1>
+        <div className="w-3/4 p-5 border rounded-lg">
+            <h1 className="text-3xl text-center uppercase tracking-wider font-bold">Input Notes</h1>
             <form method="post" required className="mt-4 flex flex-col justify-center">
                 <p id="title-length" className="flex justify-end mb-2 text-gray-400">{getCounter} Chars Left</p>
                 <input 
                 type="text"
-                className="bg-yellow-200 p-2 rounded-xl"
+                className="bg-yellow-200 p-2 rounded-xl focus:outline-none"
                 maxLength={50}
                 onChange={handleInputChange}
                 placeholder="Note Title"/> 
@@ -29,7 +29,7 @@ const FormInput = () => {
                 type="text"
                 draggable="false" 
                 rows={8}
-                className="bg-yellow-200 p-2 rounded-xl mb-3 resize-none"
+                className="bg-yellow-200 p-2 rounded-xl mb-3 focus:outline-none resize-none"
                 placeholder="Note Title"/>  
 
                 <Button text={"Submit Form"}/>
