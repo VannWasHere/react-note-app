@@ -13,7 +13,7 @@ const ApplicationContainer = () => {
     return (
         <div className="flex flex-col w-4/5 mt-3 h-full items-center gap-5">
             <FormInput />
-            <NotesContainer />
+            <NotesContainer props={notesData}/>
         </div>
     );
 }

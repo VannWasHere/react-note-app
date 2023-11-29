@@ -1,7 +1,8 @@
 import ActiveNotes from "./ActiveNotes";
 import ArchivedNotes from "./ArchivedNotes";
 
-const NotesContainer = () => {
+const NotesContainer = (props) => {
+    console.log(props);
     return (
         <div className="w-full">
             <ActiveNotes />
