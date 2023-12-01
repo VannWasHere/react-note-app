@@ -1,4 +1,5 @@
-import NoteApp from "./components/NoteApp"
+import NoteApp from './NotesComponents/NoteApp'
+
 function App() {
   return (
     <>
