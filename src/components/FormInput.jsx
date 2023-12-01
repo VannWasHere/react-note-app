@@ -1,9 +1,10 @@
 import Button from "./Button";
 import { useState } from "react";
 
-const FormInput = () => {
+const FormInput = (props) => {
     
     const [getCounter, setCounter] = useState(50);
+    const [getData, setData] = useState(props);
 
     const handleInputChange = (event) => {
         const value = event.target.value;
