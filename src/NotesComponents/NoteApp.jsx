@@ -1,8 +1,9 @@
-import AddNotes from "./AddNotes";
+import Form from "../Components/Form";
 import Card from "../Components/ItemCard"
+import { useState } from "react";
 
 const NoteApp = () => {
-    
+
     const data = [
         {
             id: +new Date(),
@@ -12,11 +13,17 @@ const NoteApp = () => {
             createdAt: '2022-04-14T04:27:34.572Z',
         }
     ]
+
+    const [getNotes, setNotes] = useState(data);
+
+    const onChangeData = (updateData) => {
+        setNotes(updateData);
+    }
     
     return (
         <>
-            <AddNotes />
-            {data.map((note, key) => (
+            <Form notes={getNotes} onChangeData={onChangeData}/>
+            {getNotes.map((note, key) => (
                 <Card key={key} title={note.title} body={note.body} createdAt={note.createdAt}/>
             ))}
         </>

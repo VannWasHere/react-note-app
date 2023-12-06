@@ -1,9 +1,14 @@
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Form = () => {
+const Form = ({notes, onChangeData}) => {
+    const [getNotes, setNotes] = useState(notes) 
     const [title, setTitle] = useState("");
     const [description, setdescription] = useState("");
+
+    useEffect(() => {
+        setNotes(notes);
+    }, [notes]);
 
     const onFormSubmit = () => {
         const insertedNotes = {
@@ -13,7 +18,8 @@ const Form = () => {
             archived: false,
             createdAt: new Date().getTime(),
         }
-        console.log(insertedNotes);
+        setNotes([...getNotes, insertedNotes]);
+        onChangeData([...getNotes, insertedNotes]);
     }
 
     return (
