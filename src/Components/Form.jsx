@@ -18,6 +18,8 @@ const Form = ({notes, onChangeData}) => {
             archived: false,
             createdAt: new Date().getTime(),
         }
+        setTitle("");
+        setdescription("");
         setNotes([...getNotes, insertedNotes]);
         onChangeData([...getNotes, insertedNotes]);
     }
