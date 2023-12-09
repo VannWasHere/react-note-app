@@ -11,17 +11,22 @@ const Form = ({notes, onChangeData}) => {
     }, [notes]);
 
     const onFormSubmit = () => {
-        const insertedNotes = {
-            id: +new Date(),
-            title: title,
-            body: description,
-            archived: false,
-            createdAt: new Date().getTime(),
+        console.log(title);
+        if(title != "" && description != "") {
+            const insertedNotes = {
+                id: +new Date(),
+                title: title,
+                body: description,
+                archived: false,
+                createdAt: new Date().getTime(),
+            }
+            setTitle("");
+            setdescription("");
+            setNotes([...getNotes, insertedNotes]);
+            onChangeData([...getNotes, insertedNotes]);
+        } else {
+            alert("The Form Cant Be Null");
         }
-        setTitle("");
-        setdescription("");
-        setNotes([...getNotes, insertedNotes]);
-        onChangeData([...getNotes, insertedNotes]);
     }
 
     return (
