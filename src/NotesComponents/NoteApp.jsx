@@ -21,12 +21,12 @@ const NoteApp = () => {
     }
     
     return (
-        <>
+        <div className="w-2/3">
             <Form notes={getNotes} onChangeData={onChangeData}/>
             {getNotes.map((note, key) => (
                 <Card key={key} title={note.title} body={note.body} createdAt={note.createdAt}/>
             ))}
-        </>
+        </div>
     );
 }
 
