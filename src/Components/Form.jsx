@@ -24,6 +24,7 @@ const Form = ({notes, onChangeData}) => {
             }
             setTitle("");
             setdescription("");
+            setLimit(0);
             setNotes([...getNotes, insertedNotes]);
             onChangeData([...getNotes, insertedNotes]);
         } else {
