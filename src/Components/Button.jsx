@@ -1,6 +1,6 @@
-const Button = ({clickStatement}) => {
+const Button = ({clickStatement, Text}) => {
     return (
-        <button className="w-1/5 bg-slate-500 p-2 ml-2 text-white" onClick={clickStatement}>Submit</button>
+        <button className="w-full bg-slate-500 p-2 text-white rounded-lg" onClick={clickStatement}>{Text}</button>
     );
 }
 

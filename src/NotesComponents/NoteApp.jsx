@@ -8,9 +8,23 @@ const NoteApp = () => {
         {
             id: +new Date(),
             title: "Learn React",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptates autem! Architecto, totam non. Doloremque minus praesentium delectus dolor odio!",
+            body: "If you're looking to dive into the world of modern web development, one of the key skills you should consider acquiring is learning React. React, developed and maintained by Facebook, has become a powerhouse in building user interfaces for web applications. Known for its component-based architecture and virtual DOM, React allows developers to create interactive and dynamic user interfaces with ease.",
             archived: false,
-            createdAt: '2022-04-14T04:27:34.572Z',
+            createdAt: '2022-12-14T04:27:34.572Z',
+        },
+        {
+            id: +new Date(),
+            title: "Cloud Computing",
+            body: "In the rapidly evolving landscape of information technology, cloud computing stands as a transformative force, reshaping the way businesses and individuals leverage computing resources. By providing on-demand access to a shared pool of configurable computing resources—such as servers, storage, and applications—over the internet, cloud computing offers unprecedented scalability, flexibility, and cost efficiency.",
+            archived: false,
+            createdAt: '2022-08-14T04:27:34.572Z',
+        },
+        {
+            id: +new Date(),
+            title: "Node JS",
+            body: "Node.js, an open-source, cross-platform JavaScript runtime, has emerged as a game-changer in server-side development. Built on the V8 JavaScript runtime engine, Node.js enables developers to execute JavaScript code outside of a browser, facilitating the development of scalable and high-performance web applications. Its non-blocking, event-driven architecture allows for asynchronous handling of requests, making it particularly well-suited for building real-time applications and APIs.",
+            archived: false,
+            createdAt: '2022-03-14T04:27:34.572Z',
         }
     ]
 
@@ -21,12 +35,14 @@ const NoteApp = () => {
     }
     
     return (
-        <div className="w-2/3">
+        <main className="w-2/3 m-auto">
             <Form notes={getNotes} onChangeData={onChangeData}/>
-            {getNotes.map((note, key) => (
-                <Card key={key} title={note.title} body={note.body} createdAt={note.createdAt}/>
-            ))}
-        </div>
+            <section className="mt-4 grid grid-cols-3 gap-8">
+                {getNotes.map((note, key) => (
+                    <Card key={key} title={note.title} body={note.body} createdAt={note.createdAt}/>
+                ))}
+            </section>
+        </main>
     );
 }
 

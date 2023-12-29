@@ -12,14 +12,15 @@ const Form = ({notes, onChangeData}) => {
     }, [notes]);
 
     const onFormSubmit = () => {
-        console.log(title);
+        const currentDate = new Date();
+        const formattedDate = currentDate.toISOString();
         if(title != "" && description != "") {
             const insertedNotes = {
                 id: +new Date(),
                 title: title,
                 body: description,
                 archived: false,
-                createdAt: new Date().getTime(),
+                createdAt: formattedDate,
             }
             setTitle("");
             setdescription("");
@@ -40,29 +41,32 @@ const Form = ({notes, onChangeData}) => {
     }
 
     return (
-        <>
-            <div className="mt-3 p-3">
-                <input 
-                type="text"
-                value={title}
-                placeholder="Input Title"
-                className="w-1/5 p-2"
-                onChange={(e) => [setTitle(e.target.value), setLimit(e.target.value.length), disableInput(e)]}
-                />
-            </div>
-            <p className="flex justify-end">Limit Character: {limitTitle}/50</p>
-
-            <div className="mt-3 p-3">
-                <textarea
+        <section className="w-full flex justify-center">
+            <div className="w-1/2">
+                <div className="mt-3 p-3">
+                    <input 
                     type="text"
-                    value={description}
-                    placeholder="Description Notes"
-                    className="w-1/5 p-2"
-                    onChange={(e) => setdescription(e.target.value)}
+                    value={title}
+                    placeholder="Input Title"
+                    className="w-full p-2"
+                    onChange={(e) => [setTitle(e.target.value), setLimit(e.target.value.length), disableInput(e)]}
                     />
+                </div>
+
+                <p className="flex justify-end">Limit Character: {limitTitle}/50</p>
+
+                <div className="mt-3 p-3">
+                    <textarea
+                        type="text"
+                        value={description}
+                        placeholder="Description Notes"
+                        className="w-full h-32 p-2"
+                        onChange={(e) => setdescription(e.target.value)}
+                        />
+                </div>
+                <Button clickStatement={onFormSubmit} Text={"Add Notes"}/>
             </div>
-            <Button clickStatement={onFormSubmit}/>
-        </>
+        </section>
     );
 }
 
