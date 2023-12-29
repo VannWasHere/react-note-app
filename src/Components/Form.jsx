@@ -49,19 +49,19 @@ const Form = ({notes, onChangeData}) => {
                     type="text"
                     value={title}
                     placeholder="Input Title"
-                    className="w-full p-2"
+                    className="w-full p-2 bg-slate-200 rounded-md "
                     onChange={(e) => [setTitle(e.target.value), setLimit(e.target.value.length), disableInput(e)]}
                     />
                 </div>
 
-                <p className="flex justify-end">Limit Character: {limitTitle}/50</p>
+                <p className="flex justify-end text-gray-500 mr-3">Limit Character: {limitTitle}/50</p>
 
                 <div className="mt-3 p-3">
                     <textarea
                         type="text"
                         value={description}
                         placeholder="Description Notes"
-                        className="w-full h-32 p-2"
+                        className="w-full h-32 p-2 bg-slate-200 rounded-md "
                         onChange={(e) => setdescription(e.target.value)}
                         />
                 </div>

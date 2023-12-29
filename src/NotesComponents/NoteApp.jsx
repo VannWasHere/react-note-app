@@ -17,14 +17,14 @@ const NoteApp = ({ input }) => {
             id: +new Date() + 2,
             title: "Cloud Computing",
             body: "In the rapidly evolving landscape of information technology, cloud computing stands as a transformative force, reshaping the way businesses and individuals leverage computing resources. By providing on-demand access to a shared pool of configurable computing resources—such as servers, storage, and applications—over the internet, cloud computing offers unprecedented scalability, flexibility, and cost efficiency.",
-            archived: false,
+            archived: true,
             createdAt: '2022-08-14T04:27:34.572Z',
         },
         {
             id: +new Date() + 3,
             title: "Node JS",
             body: "Node.js, an open-source, cross-platform JavaScript runtime, has emerged as a game-changer in server-side development. Built on the V8 JavaScript runtime engine, Node.js enables developers to execute JavaScript code outside of a browser, facilitating the development of scalable and high-performance web applications. Its non-blocking, event-driven architecture allows for asynchronous handling of requests, making it particularly well-suited for building real-time applications and APIs.",
-            archived: true,
+            archived: false,
             createdAt: '2022-03-14T04:27:34.572Z',
         }
     ], []);
