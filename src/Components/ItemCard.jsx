@@ -46,7 +46,7 @@ const ItemCard = ({ notes, onNotesUpdate }) => {
                             </div>
                             <div className="flex gap-5 mt-4">
                                 <Button clickStatement={() => {deleteNotes(note.id)}} Text={"Delete"}/>
-                                <Button clickStatement={() => {moveNotes(note.id)}} Text={"Archive"}/>
+                                <Button clickStatement={() => {moveNotes(note.id)}} Text={(note.archived) ? "Unarchive" : "Archive"}/>
                             </div>
                         </section>
                     ))
@@ -65,7 +65,7 @@ const ItemCard = ({ notes, onNotesUpdate }) => {
                             </div>
                             <div className="flex gap-5 mt-4">
                                 <Button clickStatement={() => {deleteNotes(note.id)}} Text={"Delete"}/>
-                                <Button clickStatement={() => {moveNotes(note.id)}} Text={"Archive"}/>
+                                <Button clickStatement={() => {moveNotes(note.id)}} Text={(note.archived) ? "Unarchive" : "Archive"}/>
                             </div>
                         </section>
                     ))
