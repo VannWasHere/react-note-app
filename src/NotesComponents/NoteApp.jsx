@@ -1,10 +1,11 @@
 import Form from "../Components/Form";
 import ItemCard from "../Components/ItemCard";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const NoteApp = () => {
-
-    const data = [
+const NoteApp = ({ input }) => {
+    
+    // Using memo because "This" data is dependencies in useEffect
+    const data = useMemo(() => [
         {
             id: +new Date() + 1,
             title: "Learn React",
@@ -26,19 +27,30 @@ const NoteApp = () => {
             archived: true,
             createdAt: '2022-03-14T04:27:34.572Z',
         }
-    ]
+    ], []);
 
-    const [getNotes, setNotes] = useState(data);
+    const [rawNotes, setRawNotes] = useState(data);
+    const [filterNotes, setFilterNotes] = useState(data);
 
     const onChangeData = (updateData) => {
-        return setNotes(updateData);
+        setRawNotes(updateData);
+        setFilterNotes(updateData);
     }
-    
+
+    useEffect(() => {
+        if(input.trim() !== "") {
+            const searchData = filterNotes.filter(data => data.title.toLowerCase().includes(input.toLowerCase()));
+            setFilterNotes(searchData)
+        } else {
+            setFilterNotes(rawNotes);
+        }
+    }, [filterNotes, input, rawNotes])
+
     return (
         <main className="w-2/3 m-auto">
-            <Form notes={getNotes} onChangeData={onChangeData}/>
+            <Form notes={rawNotes} onChangeData={onChangeData}/>
             <section className="mb-5">
-                <ItemCard onNotesUpdate={onChangeData} notes={getNotes} />
+                <ItemCard onNotesUpdate={onChangeData} notes={filterNotes} />
             </section>
         </main>
     );
