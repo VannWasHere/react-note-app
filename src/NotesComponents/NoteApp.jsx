@@ -7,26 +7,47 @@ const NoteApp = ({ input }) => {
     // Using memo because "This" data is dependencies in useEffect
     const data = useMemo(() => [
         {
-            id: +new Date() + 1,
-            title: "Learn React",
-            body: "If you're looking to dive into the world of modern web development, one of the key skills you should consider acquiring is learning React. React, developed and maintained by Facebook, has become a powerhouse in building user interfaces for web applications. Known for its component-based architecture and virtual DOM, React allows developers to create interactive and dynamic user interfaces with ease.",
+            id: 1,
+            title: "Babel",
+            body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
+            createdAt: '2022-04-14T04:27:34.572Z',
             archived: false,
-            createdAt: '2022-12-14T04:27:34.572Z',
-        },
-        {
-            id: +new Date() + 2,
-            title: "Cloud Computing",
-            body: "In the rapidly evolving landscape of information technology, cloud computing stands as a transformative force, reshaping the way businesses and individuals leverage computing resources. By providing on-demand access to a shared pool of configurable computing resources—such as servers, storage, and applications—over the internet, cloud computing offers unprecedented scalability, flexibility, and cost efficiency.",
-            archived: true,
-            createdAt: '2022-08-14T04:27:34.572Z',
-        },
-        {
-            id: +new Date() + 3,
-            title: "Node JS",
-            body: "Node.js, an open-source, cross-platform JavaScript runtime, has emerged as a game-changer in server-side development. Built on the V8 JavaScript runtime engine, Node.js enables developers to execute JavaScript code outside of a browser, facilitating the development of scalable and high-performance web applications. Its non-blocking, event-driven architecture allows for asynchronous handling of requests, making it particularly well-suited for building real-time applications and APIs.",
+          },
+          {
+            id: 2,
+            title: "Functional Component",
+            body: "Functional component merupakan React component yang dibuat menggunakan fungsi JavaScript. Agar fungsi JavaScript dapat disebut component ia harus mengembalikan React element dan dipanggil layaknya React component.",
+            createdAt: '2022-04-14T04:27:34.572Z',
             archived: false,
-            createdAt: '2022-03-14T04:27:34.572Z',
-        }
+          },
+          {
+            id: 3,
+            title: "Modularization",
+            body: "Dalam konteks pemrograman JavaScript, modularization merupakan teknik dalam memecah atau menggunakan kode dalam berkas JavaScript secara terpisah berdasarkan tanggung jawabnya masing-masing.",
+            createdAt: '2022-04-14T04:27:34.572Z',
+            archived: false,
+          },
+          {
+            id: 4,
+            title: "Lifecycle",
+            body: "Dalam konteks React component, lifecycle merupakan kumpulan method yang menjadi siklus hidup mulai dari component dibuat (constructor), dicetak (render), pasca-cetak (componentDidMount), dan sebagainya. ",
+            createdAt: '2022-04-14T04:27:34.572Z',
+            archived: false,
+          },
+          {
+            id: 5,
+            title: "ESM",
+            body: "ESM (ECMAScript Module) merupakan format modularisasi standar JavaScript.",
+            createdAt: '2022-04-14T04:27:34.572Z',
+            archived: false,
+          },
+          {
+            id: 6,
+            title: "Module Bundler",
+            body: "Dalam konteks pemrograman JavaScript, module bundler merupakan tools yang digunakan untuk menggabungkan seluruh modul JavaScript yang digunakan oleh aplikasi menjadi satu berkas.",
+            createdAt: '2022-04-14T04:27:34.572Z',
+            archived: false,
+          },
     ], []);
 
     const [rawNotes, setRawNotes] = useState(data);
